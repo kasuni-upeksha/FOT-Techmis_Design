@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/indexcss.css">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="left">
+        <div class="center">
+            <img src="img/uni_logo.png" style="width: 40%; margin-left: 30%; margin-top: 20%;">
+        </div>ó
+    </div>
+    <div class="right">
+        <div class=" h-100 d-flex justify-content-center align-items-center">
+            <div class="form_box">
+                <h1>LOG IN</h1>
+                <br>
+                <form name="myForm" action="dashboard.html" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="uid" id="uid" placeholder="Username">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" id="password"
+                            placeholder="password">
+                    </div>
+                    <br>
+                    <div class="log_btn">
+                        <button type="submit" class="btn btn-primary mb-2 ">LOG IN</button>
+                    </div>
+                </form>
+                <script>
+                    function validateForm() {
+                        let x = document.forms["myForm"]["uid"].value;
+                        let y = document.forms["myForm"]["password"].value;
+                        if (x == "") {
+                            alert("Username must be filled out");
+                            return false;
+                        }else if(y.length < 8){
+                            alert("Password must be 8 characters long");
+                            return false;
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

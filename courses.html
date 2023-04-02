@@ -1,0 +1,520 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/mycss.css">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="dashboard.html"><i class="bi bi-house-door"></i>
+            <div id="navdel1">Dashboard</div>
+        </a>
+        <a href="#" class="current_link"><i class="bi bi-book-half"></i>
+            <div id="navdel2">Courses</div>
+        </a>
+        <a href="registration.html"><i class="bi bi-pen-fill"></i>
+            <div id="navdel3">Registration</div>
+        </a>
+        <a href="medicals.html"><i class="bi bi-file-earmark-medical-fill"></i>
+            <div id="navdel4">Medicals</div>
+        </a>
+        <a href="examnination.html"><i class="bi bi-newspaper"></i>
+            <div id="navdel5">Examinations</div>
+        </a>
+        <a href="index.html" class="bottom"><i class="bi bi-box-arrow-in-left"></i></i>
+            <div id="navdel6">Log Out</div>
+        </a>
+    </div>
+
+    <div class="top_nav">
+
+        <img src="img/logo.png" class="logo">
+        <a href="profile.html"><img src="img/profile.jpg" class="profile"></a>
+        <a href="a_calander.html">Academic Calander</a>
+        <a href="notices.html">Notices</a>
+    </div>
+    <div id="main">
+        <div class="inside">
+            <h2><button class="btn btn-success" id="at">Attendance</button>&emsp;
+                <button class="btn btn-primary" id="car">Examinations Eligibility</button>&emsp;
+                <button class="btn btn-primary" id="dpp">Download Past Papers</button>&emsp;
+                <button class="btn btn-primary" id="lexc">Languages & Extra Courses</button>&emsp;
+            </h2>
+            <script>
+                $("#at").on("click", function () {
+                    $("[id='atb']").show(300);
+                    $("[id='carb']").hide(300);
+                    $("[id='dppb']").hide(300);
+                    $("[id='lexcb']").hide(300);
+                    $("[id='atb2']").hide(300);
+                    $("#at").removeClass("btn-primary");
+                    $("#at").addClass("btn-success");
+                    $("#car").removeClass("btn-success");
+                    $("#car").addClass("btn-primary");
+                    $("#dpp").removeClass("btn-success");
+                    $("#dpp").addClass("btn-primary");
+                    $("#lexc").removeClass("btn-success");
+                    $("#lexc").addClass("btn-primary");
+                });
+                $("#dpp").on("click", function () {
+                    $("[id='atb']").hide(300);
+                    $("[id='carb']").hide(300);
+                    $("[id='dppb']").show(300);
+                    $("[id='lexcb']").hide(300);
+                    $("[id='atb2']").hide(300);
+                    $("#at").removeClass("btn-success");
+                    $("#at").addClass("btn-primary");
+                    $("#car").removeClass("btn-success");
+                    $("#car").addClass("btn-primary");
+                    $("#dpp").removeClass("btn-primary");
+                    $("#dpp").addClass("btn-success");
+                    $("#lexc").removeClass("btn-success");
+                    $("#lexc").addClass("btn-primary");
+                });
+                $("#car").on("click", function () {
+                    $("[id='atb']").hide(300);
+                    $("[id='carb']").show(300);
+                    $("[id='dppb']").hide(300);
+                    $("[id='lexcb']").hide(300);
+                    $("[id='atb2']").hide(300);
+                    $("#at").removeClass("btn-success");
+                    $("#at").addClass("btn-primary");
+                    $("#car").removeClass("btn-primary");
+                    $("#car").addClass("btn-success");
+                    $("#dpp").removeClass("btn-success");
+                    $("#dpp").addClass("btn-primary");
+                    $("#lexc").removeClass("btn-success");
+                    $("#lexc").addClass("btn-primary");
+                });
+                $("#lexc").on("click", function () {
+                    $("[id='atb']").hide(300);
+                    $("[id='carb']").hide(300);
+                    $("[id='dppb']").hide(300);
+                    $("[id='lexcb']").show(300);
+                    $("[id='atb2']").hide(300);
+                    $("#at").removeClass("btn-success");
+                    $("#at").addClass("btn-primary");
+                    $("#car").removeClass("btn-success");
+                    $("#car").addClass("btn-primary");
+                    $("#dpp").removeClass("btn-success");
+                    $("#dpp").addClass("btn-primary");
+                    $("#lexc").removeClass("btn-primary");
+                    $("#lexc").addClass("btn-success");
+                });
+            </script>
+            <div  id="lexcb">
+                <h2>Language & Extra Courses</h2>
+                <div class="card_holder" style="padding:0px;">
+                    <div class="card_custom">
+                        <table class="fl-table">
+                            <thead>
+                                <tr>
+                                    <td colspan="3"><b>Ongoing Programs</b></td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left:30px; text-align: left;">Program Name</th>
+                                    <th style="padding-left:30px; text-align: left;">Start Date</th>
+                                    <th style="padding-left:30px; text-align: left;">End Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr >
+                                    <td style="padding-left:30px; text-align: left;">Chinese Language</td>
+                                    <td style="padding-left:30px; text-align: left;">2022/04/01</td>
+                                    <td style="padding-left:30px; text-align: left;">2022/06/30</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:30px; text-align: left;">Japanese Language</td>
+                                    <td style="padding-left:30px; text-align: left;">2022/03/01</td>
+                                    <td style="padding-left:30px; text-align: left;">2022/05/30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card_custom">
+                        <table class="fl-table">
+                            <thead>
+                                <tr>
+                                    <td colspan="2"><b>Upcoming Programs</b></td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left:30px; text-align: left;">Program Name</th>
+                                    <th style="padding-left:30px; text-align: left;">Start Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding-left:30px; text-align: left;">German Language</td>
+                                    <td style="padding-left:30px; text-align: left;">2022/07/01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div  id="dppb">
+                <h2>Download Past Papers</h2>
+                <div class="card_holder" style="padding:0px;">
+                    <div class="card_custom">
+        
+                    </div>
+                    <div class="card_custom">
+                        <table class="fl-table">
+                            <tr>
+                                <td colspan="4"></td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>Select level</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary">Level 1</button>
+                                        <div class="dropdown-content">
+                                            <a href="#">Level 1</a>
+                                            <a href="#">Level 2</a>
+                                            <a href="#">Level 3</a>
+                                            <a href="#">Level 4</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary">Semester 1</button>
+                                        <div class="dropdown-content">
+                                            <a href="#">Semester 1</a>
+                                            <a href="#">Semester 2</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td colspan="3"><input type="submit" class="btn btn-success" value="Download"></td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card_custom">
+        
+                    </div>
+                </div>
+            </div>
+            
+            <div  id="carb">
+                <h2>Examinations Eligibility</h2>
+                <div class="card_holder" style="padding:0px;">
+                    <div class="card_custom">
+        
+                    </div>
+                    <div class="card_custom">
+                        <table class="fl-table">
+                            <thead>
+                                <tr>
+                                    <th>Course Code</th>
+                                    <th>Course Name</th>
+                                    <th>Eligibility</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ENG3122</td>
+                                    <td>English V</td>
+                                    <td class="text-success">EL</td>
+                                </tr>
+                                <tr>
+                                    <td>ICT3113</td>
+                                    <td>Advanced Programming in Java/C++</td>
+                                    <td class="text-danger">NE</td>
+                                </tr>
+                                <tr>
+                                    <td>ICT3123</td>
+                                    <td>IT Project Management</td>
+                                    <td class="text-success">EL</td>
+                                </tr>
+                                <tr>
+                                    <td>ICT3132</td>
+                                    <td>Software Testing Methods and Tools</td>
+                                    <td class="text-success">EL</td>
+                                </tr>
+                                <tr>
+                                    <td>ICT3142</td>
+                                    <td>Mobile Computing Principles</td>
+                                    <td class="text-success">EL</td>
+                                </tr>
+                                <tr>
+                                    <td>ICT3152</td>
+                                    <td>Human Computer Interaction</td>
+                                    <td class="text-success">EL</td>
+                                </tr>
+                                <tr>
+                                    <td>ICT3162</td>
+                                    <td>Rapid and Agile Software Development</td>
+                                    <td class="text-danger">NE</td>
+                                </tr>
+                                <tr>
+                                    <td>ICT3173</td>
+                                    <td>Group Project</td>
+                                    <td class="text-success">EL</td>
+                                </tr>
+                                <tr>
+                                    <td>TCS3131</td>
+                                    <td>Human Resource Management</td>
+                                    <td class="text-success">EL</td>
+                                </tr>
+                            <tbody>
+                        </table>
+                    </div>
+                    <div class="card_custom">
+        
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="label" id="atb">Attendance</h2>
+            <div class="table-wrapper lab" id="atb">
+                <table class="fl-table">
+                    <thead>
+                        <tr>
+                            <th>Course code</th>
+                            <th colspan="2" style="width:400px;">Progress</th>
+                            <th>Precentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ENG3122</td>
+                            <td colspan="2">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td>75%</td>
+                            <td><button class="btn btn-primary">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>ICT3113</td>
+                            <td colspan="2">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td>80%</td>
+                            <td><button class="btn btn-primary" id="ict3113">View</button></td>
+                            <script>
+                                $("#ict3113").on("click", function () {
+                                    $("[id='atb2']").show(300);
+                                    $("[id='ict3113ex']").show(300);
+                                    $(".label").text("ICT3113 - Attendance");
+                                    $(".lab").hide(300);
+                                    $(".back").show();
+                                });
+                            </script>
+                        </tr>
+                        <tr>
+                            <td>ICT3123</td>
+                            <td colspan="2">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td>25%</td>
+                            <td><button class="btn btn-primary">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>ICT3132</td>
+                            <td colspan="2">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td>89%</td>
+                            <td><button class="btn btn-primary">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>ICT3142</td>
+                            <td colspan="2">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td>70%</td>
+                            <td><button class="btn btn-primary">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>ICT3152</td>
+                            <td colspan="2">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td>66%</td>
+                            <td><button class="btn btn-primary">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>ICT3162</td>
+                            <td colspan="2">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td>100%</td>
+                            <td><button class="btn btn-primary">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>ICT3173</td>
+                            <td colspan="2">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td>55%</td>
+                            <td><button class="btn btn-primary">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>TCS3131</td>
+                            <td colspan="2">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 69%" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td>69%</td>
+                            <td><button class="btn btn-primary">View</button></td>
+                        </tr>
+                    <tbody>
+                </table>
+            </div>
+
+        </div>
+        <div id="atb2">
+            <div class="card_holder">
+                <div class="card_custom" id="ict3113ex">
+                    <table class="fl-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Session type</th>
+                                <th>status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Practical</td>
+                                <td class="text-success">Present</td>
+                            </tr>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Practical</td>
+                                <td class="text-success">Present</td>
+                            </tr>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Practical</td>
+                                <td class="text-success">Present</td>
+                            </tr>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Practical</td>
+                                <td class="text-success">Present</td>
+                            </tr>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Practical</td>
+                                <td class="text-success">Present</td>
+                            </tr>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Practical</td>
+                                <td class="text-success">Present</td>
+                            </tr>
+                        <tbody>
+                    </table>
+                </div>
+                <div class="card_custom" id="ict3113ex">
+                    <table class="fl-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Session type</th>
+                                <th>status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Theory</td>
+                                <td class="text-danger">Abscent</td>
+                            </tr>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Theory</td>
+                                <td class="text-danger">Abscent</td>
+                            </tr>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Theory</td>
+                                <td class="text-danger">Abscent</td>
+                            </tr>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Theory</td>
+                                <td class="text-danger">Abscent</td>
+                            </tr>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Theory</td>
+                                <td class="text-danger">Abscent</td>
+                            </tr>
+                            <tr>
+                                <td>2022/04/01</td>
+                                <td>Theory</td>
+                                <td class="text-danger">Abscent</td>
+                            </tr>
+                        <tbody>
+                    </table>
+                </div>
+
+        </div>
+        
+            <h2><button class="btn btn-danger back" id="atb2">Back</button></h2>
+            <script>
+                $(".back").on("click", function () {
+                    $("[id='ict3113ex']").hide(300);
+                    $(".label").text("Attendance");
+                    $(".lab").show(300);
+                    $(".back").hide();
+                });
+            </script>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="src/myjs.js"></script>
+</body>
+
+</html>
